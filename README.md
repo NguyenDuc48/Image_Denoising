@@ -1,18 +1,18 @@
 # Image-denoising
-Image denoising using K Nearest Neighbors filter implemented in CUDA technology
+Khử nhiễu hình ảnh sử dụng KNN và CUDA
 
 ## Overview
-This application uses a K Nearest Neighbors filter to remove noise from images. The project was based on [this paper](https://developer.download.nvidia.com/compute/cuda/1.1-Beta/x86_website/projects/imageDenoising/doc/imageDenoising.pdf).
+Bài báo gốc về thuật toán KNN [this paper](https://developer.download.nvidia.com/compute/cuda/1.1-Beta/x86_website/projects/imageDenoising/doc/imageDenoising.pdf).
 
 ## Compilation
-In order to compile the cuda program you need a suitable NVIDIA GPU and CUDA development environment.
-You can compile the application using a command:
+Yếu cầu máy tính cần có NVIDIA GPU và môi trường CUDA
+Biên dịch chương trình theo thứ tự sau:
 
 ``` 
 nvcc ./knn_image_denoiser.cu -lpng -o knn_image_denoiser.out
 ```
 
-Compilation of the other files can be done using:
+Đối với các file khác:
 
 ```
 gcc -o knn_image_denoiser_omp -fopenmp -lpng knn_image_denoiser_omp.c
@@ -20,11 +20,11 @@ gcc -o knn_image_denoiser -lpng knn_image_denoiser.c
 ```
 
 ## Running the application
-In order to run the program, you need to specify two arguments:
+Để thực hiện đánh giá cần có 2 đối số:
 - input image path
 - output image path
 
-For example:
+Ví dụ:
 ```
 ./knn_image_denoiser.out input.png output.png
 ```
